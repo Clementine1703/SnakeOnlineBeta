@@ -212,7 +212,7 @@ class App(tk.Tk):
                     self):  # Функция которая проверяет не касается ли змейка рамок окна, и не съела ли змейка яблоко
                 if self.side == 'top':
                     if self.body[0][1] <= 0:  # коснулась окна
-                        self.body.insert(0, [self.body[0][0], WINDOW_HEIGTH / SIZE])
+                        self.body.insert(0, [self.body[0][0], WINDOW_HEIGTH / SIZE - 1])
                         self.body.pop(-1)
                     else:
                         self.body.insert(0, [self.body[0][0], self.body[0][1] - 1])
@@ -226,7 +226,7 @@ class App(tk.Tk):
                         self.body.pop(-1)
                 if self.side == 'left':
                     if self.body[0][0] <= 0:
-                        self.body.insert(0, [WINDOW_WIDTH / SIZE, self.body[0][1]])
+                        self.body.insert(0, [WINDOW_WIDTH / SIZE - 1, self.body[0][1]])
                         self.body.pop(-1)
                     else:
                         self.body.insert(0, [self.body[0][0] - 1, self.body[0][1]])
